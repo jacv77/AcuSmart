@@ -37,6 +37,13 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            document.addEventListener("deviceready", onDeviceReady, false);            
+
+            function onDeviceReady() {
+
+                document.location = 'https://c.na15.visual.force.com/apex/test';
+
+            }
         </script>
     </body>
 </html>
