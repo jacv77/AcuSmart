@@ -1,27 +1,82 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>AcuSmart</title>
+<head>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
 
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
 
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-         var ref = window.open('https://c.na15.visual.force.com/apex/test', '_blank', 'location=yes');
-         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
-         ref.addEventListener('exit', function() { alert(event.type); });
-    }
 
-    </script>
-  </head>
-  <body>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<title>AppOne</title>
+
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+<script type="text/javascript" charset="utf-8">
+	// Wait for PhoneGap to load
+	//
+	function init() {
+		document.addEventListener("deviceready", onDeviceReady, false);
+		
+	}
+
+	// PhoneGap is ready
+	//
+	function onDeviceReady() {
+		console.log("PhoneGap is ready");
+	}
+
+	function locationChanged(newurl) {
+		console.log("The JS got this url = " + newurl);
+	}
+
+	function closed() {
+		console.log("The JS got a close event");
+	}
+
+	function showPage(locbar) {
+		window.plugins.childBrowser.onLocationChange = locationChanged;
+		window.plugins.childBrowser.onClose = closed;
+		window.plugins.childBrowser.showWebPage("http://50.63.10.69:8080/AppOne/portal/mobile/", {
+			showLocationBar : locbar
+		});
+	}
+
+	function openExternal() {
+		window.plugins.childBrowser.openExternal("http://50.63.10.69:8080/AppOne/portal/mobile/");
+	}
+</script>
+</head>
+  <body onload="init()" id="stage" class="theme"  bgcolor="Silver">
+  <p> </p> <p> </p>
+  <div>
+   <h2>    <center></center></h2><p> </p>
+   
+     <center >
+    <img src="images/rayitte.png" alt="Smiley face" height="100" width="180"  /> </a></p>
+ </center>
+ <p> </p> 
+ <b><center><font>Welcome to your enterprise application portal</font></center></b>
+ <p> </p>
+ 
+ 
+ <div id="d1">
+    <a href="#" class="press-it-btn" onclick="showPage(false); return false;">
+       <center >
+        <img src="images/rayitte-1.png" alt="Smiley face" height="150" width="220"  />
+       </a></p>
+ </center>
+ </div>
+ 
+    </div>
+   </b>&nbsp;</b>&nbsp;</b>&nbsp;</b>&nbsp;</b>&nbsp;</b>
+   <footer>
+   <div>
+    </b>&nbsp;</b>&nbsp;</b>&nbsp;</b>&nbsp;</b>&nbsp;</b>
+    <p id="finePrint" class="Note">
+Copyright &copy; 2011-2012 Kongur Tiube,  LLC.<br />Use of this application constitutes acceptance of the  Kongur Tiube , LLC. Terms of Use</a> and Privacy Policy</a>. 
+
+</p>
+</div>
+</footer>
   </body>
+  
 </html>
-
