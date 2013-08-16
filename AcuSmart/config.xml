@@ -6,10 +6,10 @@
         id        = "com.acumen.sfdc.acusmart"
         version   = "1.0.0">
 
-    <name>AcuSmart</name>
+    <name>LookBook</name>
 
     <description>
-        AcuSmart is a mobile sales force front end application for Acumen Sales Force
+        This App is a Look Book to view Hilton World Wide Owner/partner profile
     </description>
 
     <author href="http://www.acumensolutions.com" email="jvarghese@acumensolutions.com">
